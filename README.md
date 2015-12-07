@@ -1,2 +1,0 @@
-# miosk
-Militär Kiosk
