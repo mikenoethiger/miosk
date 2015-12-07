@@ -25,7 +25,8 @@ class ImageManager
         return $imageName;
     }
 
-    public static function getImagesSourceFolder() {
+    public static function getImagesSourceFolder()
+    {
         return public_path() . '/product_images';
     }
 }
