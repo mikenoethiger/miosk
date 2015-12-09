@@ -82,7 +82,7 @@
                             <li data-transition="random" data-slotamount="7" data-masterspeed="500" data-saveperformance="on" data-title="Get 50% Sales">
 
                                 <!-- main image -->
-                                <img src="/images/muffin.jpg" alt="slidebg1" data-bgposition="center top"  data-bgrepeat="no-repeat" data-bgfit="cover">
+                                <img src="/images/muffin.png" alt="slidebg1" data-bgposition="center top"  data-bgrepeat="no-repeat" data-bgfit="cover">
 
                                 <!-- Transparent Background -->
                                 <div class="tp-caption dark-translucent-bg"
