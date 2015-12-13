@@ -9,17 +9,13 @@
 namespace App\Miosk\Manager;
 
 use App\Visitor;
-use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Facades\Cookie;
 
-class ClientIdentificationManager {
+class VisitorDetector {
 
-    public static function generateId() {
+    public static function registerVisitor() {
         $clientId = uniqid();
-        Cookie::queue('client_id', $clientId);
-    }
-
-    public static function createVisitor() {
-        $clientId = Request::cookie('client_id');
+        Cookie::queue('visitor_id', $clientId);
         $visitor = new Visitor();
         $visitor->client_id = $clientId;
         $visitor->last_visit = new \DateTime();

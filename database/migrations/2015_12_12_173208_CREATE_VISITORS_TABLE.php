@@ -16,7 +16,7 @@ class CREATEVISITORSTABLE extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string('client_id');
-            $table->date('last_visit');
+            $table->dateTime('last_visit');
             $table->boolean('banned');
             $table->string('name')->nullable();
         });
