@@ -20,8 +20,16 @@ class ImageManager
     public static function saveImage(\SplFileInfo $file)
     {
         $imageName = str_random(40) . '.' . $file->getClientOriginalExtension();
+
         $file->move(ImageManager::getImagesSourceFolder(), $imageName);
 
+        return $imageName;
+    }
+
+    public static function copyImage($imgPath)
+    {
+        $imageName = str_random(40) . '.' . (new \SplFileInfo($imgPath))->getExtension();
+        copy($imgPath, ImageManager::getImagesSourceFolder() . '/' . $imageName);
         return $imageName;
     }
 
