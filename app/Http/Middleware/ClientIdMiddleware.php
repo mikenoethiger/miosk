@@ -25,7 +25,8 @@ class ClientIdMiddleware
         Log::info(Request::hasCookie('client_id'));
 
         if ($clientId == null) {
-            ClientIdentificationManager::generateCookie();
+            ClientIdentificationManager::generateId();
+            ClientIdentificationManager::createVisitor();
         }
 
         return $next($request);
