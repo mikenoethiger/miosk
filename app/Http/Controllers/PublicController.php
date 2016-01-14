@@ -20,4 +20,16 @@ class PublicController extends Controller
         $products = Product::all();
         return view('kiosk', compact('products'));
     }
+
+    public function drinks()
+    {
+        $products = Product::all();
+        return view('kiosk', compact('products'));
+    }
+
+    public function food()
+    {
+        $products = Product::all();
+        return view('kiosk', compact('products'));
+    }
 }

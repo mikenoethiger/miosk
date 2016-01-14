@@ -65,72 +65,33 @@
 <div class="page-wrapper">
     <!-- banner start -->
     <!-- ================ -->
-    <div class="dark-bg banner pv-40">
-        <div class="container clearfix">
-
-            <!-- slideshow start -->
-            <!-- ================ -->
-            <div class="slideshow">
-
-                <!-- slider revolution start -->
-                <!-- ================ -->
-                <div class="slider-banner-container">
-                    <div class="slider-banner-boxedwidth">
-                        <ul class="slides">
-                            <!-- slide 1 start -->
-                            <!-- ================ -->
-                            <li data-transition="random" data-slotamount="7" data-masterspeed="500" data-saveperformance="on" data-title="Get 50% Sales">
-
-                                <!-- main image -->
-                                <img src="/images/muffin.png" alt="slidebg1" data-bgposition="center top"  data-bgrepeat="no-repeat" data-bgfit="cover">
-
-                                <!-- Transparent Background -->
-                                <div class="tp-caption dark-translucent-bg"
-                                     data-x="center"
-                                     data-y="bottom"
-                                     data-speed="600"
-                                     data-start="0">
-                                </div>
-
-                                <!-- LAYER NR. 1 -->
-                                <div class="tp-caption sfb fadeout large_white"
-                                     data-x="left"
-                                     data-y="80"
-                                     data-speed="500"
-                                     data-start="1000"
-                                     data-easing="easeOutQuad"><span class="text-default">Kiosk</span> Halle 4<br> Verplegung für zwischendurch
-                                </div>
-
-                                <!-- LAYER NR. 2 -->
-                                <div class="tp-caption sfb fadeout large_white tp-resizeme hidden-xs"
-                                     data-x="left"
-                                     data-y="200"
-                                     data-speed="500"
-                                     data-start="1300"
-                                     data-easing="easeOutQuad"><div class="separator-2 light"></div>
-                                </div>
-
-                                <!-- LAYER NR. 3 -->
-                                <div class="tp-caption sfb fadeout medium_white hidden-xs"
-                                     data-x="left"
-                                     data-y="220"
-                                     data-speed="500"
-                                     data-start="1300"
-                                     data-easing="easeOutQuad"
-                                     data-endspeed="600">Melden Sie sich bei Obgfr Nöthiger im Magazin für technisches Material um etwas zu kaufen.
-                                </div>
-                            </li>
-                            <!-- slide 1 end -->
-                        </ul>
-                        <div class="tp-bannertimer"></div>
-                    </div>
+    <div class="banner dark-translucent-bg padding-bottom-clear" style="background-image:url('images/bottles.jpg'); background-size: cover">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 text-center col-md-offset-2 pv-20">
+                    <h2 class="title object-non-visible" data-animation-effect="fadeIn" data-effect-delay="100">Willkommen bei <strong>Miosk</strong></h2>
+                    <div class="separator object-non-visible mt-10" data-animation-effect="fadeIn" data-effect-delay="100"></div>
+                    <p class="text-center object-non-visible" data-animation-effect="fadeIn" data-effect-delay="100">Informiere dich über aktuelle Preise, Aktionen und Verfügbarkeit von den Produkten.</p>
                 </div>
-                <!-- slider revolution end -->
-
             </div>
-            <!-- slideshow end -->
-
         </div>
+        <!-- section start -->
+        <!-- ================ -->
+        <div class="dark-translucent-bg section">
+            <div class="container">
+                <!-- filters start -->
+                <div class=" text-center mb-20">
+                    <form class="form-inline" >
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Produkte durchsuchen">
+                        </div>
+                        <a href="#" class="btn btn-default">Suchen</a>
+                    </form>
+                </div>
+                <!-- filters end -->
+            </div>
+        </div>
+        <!-- section end -->
     </div>
     <!-- banner end -->
 
@@ -151,6 +112,11 @@
                             {{ session('message') }}
                         </div>
                     @endif
+                        <ul class="nav nav-pills" role="tablist">
+                            <li class="active"><a href="/all" role="tab" title="Alle"><i class="icon-star"></i> Alle</a></li>
+                            <li><a href="/drinks" role="tab" title="Getränke"><i class="fa fa-glass"></i> Getränke</a></li>
+                            <li><a href="/food" role="tab" title="Esswaren"><i class="fa fa-cutlery"></i> Esswaren</a></li>
+                        </ul>
                     <!-- pills start -->
                     <!-- ================ -->
                     <!-- Nav tabs -->
@@ -161,7 +127,7 @@
                             <div class="row masonry-grid-fitrows grid-space-10">
 
                                 @foreach ($products as $product)
-                                    <div class="col-md-4 masonry-grid-item">
+                                    <div class="col-lg-3 col-md-4 col-xs-6 masonry-grid-item">
                                         <div class="listing-item white-bg bordered mb-20">
                                             <div class="overlay-container">
                                                 <img src="/product_images/{{ $product->image_path }}" alt="">
@@ -182,10 +148,11 @@
                                                     @else
                                                         <span class="price"><del>{{ number_format($product->price, 2, ',', '\'') }} CHF</del> {{ number_format($product->sale_price, 2, ',', '\'') }} CHF</span>
                                                     @endif
-                                                        <form role="form" method="POST" enctype="multipart/form-data"  action="/ranking">
+                                                        <a href="javascript:$('#like-form-{{ $product->id }}').submit();" class="pull-right margin-clear btn btn-sm btn-danger btn-animated">Mag ich<i class="fa fa-heart"></i></a>
+
+                                                        <form id="like-form-{{ $product->id }}" role="form" method="POST" enctype="multipart/form-data"  action="/ranking">
                                                             {!! csrf_field() !!}
                                                             <input type="hidden" name="product_id" value="{{ $product->id }}">
-                                                            <button type="submit" class="pull-right margin-clear btn btn-sm btn-danger btn-animated">Mag ich<i class="fa fa-heart"></i></button>
                                                         </form>
                                                 </div>
                                             </div>

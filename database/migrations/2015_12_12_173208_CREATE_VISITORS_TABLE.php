@@ -15,7 +15,7 @@ class CREATEVISITORSTABLE extends Migration
         Schema::create('visitors', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->string('client_id');
+            $table->string('visitor_id');
             $table->dateTime('last_visit');
             $table->boolean('banned');
             $table->string('name')->nullable();

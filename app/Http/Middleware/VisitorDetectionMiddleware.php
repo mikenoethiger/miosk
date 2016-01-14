@@ -2,7 +2,7 @@
 
 namespace App\Http\Middleware;
 
-use App\Miosk\Manager\VisitorDetector;
+use App\Miosk\Manager\VisitorManager;
 use Closure;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Request;
@@ -18,13 +18,17 @@ class VisitorDetectionMiddleware
      */
     public function handle($request, Closure $next)
     {
-        $clientId = Request::cookie('visitor_id');
-        Log::info($clientId);
+        $visitorId = Request::cookie('visitor_id');
+        Log::info($visitorId);
         Log::info(Request::hasCookie('visitor_id'));
 
-        if ($clientId == null) {
-            VisitorDetector::registerVisitor();
+        // Register the visitor if the visitorId is not set yet
+        if ($visitorId == null) {
+            $visitorId = VisitorManager::registerVisitor();
         }
+
+        // Update last visit of current visitor to current date time
+        VisitorManager::updateLastVisit($visitorId);
 
         return $next($request);
     }

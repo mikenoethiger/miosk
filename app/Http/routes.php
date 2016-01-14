@@ -17,6 +17,9 @@ Route::post('auth/login', 'Auth\AuthController@postLogin');
 Route::get('auth/logout', 'Auth\AuthController@getLogout');
 
 Route::get('/', 'PublicController@kiosk');
+Route::get('/drinks', 'PublicController@drinks');
+Route::get('/food', 'PublicController@food');
+Route::get('/search/{text}', 'PublicController@drinks');
 
 Route::resource('suggestion', 'SuggestionController',
     ['only' => ['store', 'destroy', 'update']]);
