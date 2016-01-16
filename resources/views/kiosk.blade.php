@@ -71,7 +71,7 @@
                 <div class="col-md-8 text-center col-md-offset-2 pv-20">
                     <h2 class="title object-non-visible" data-animation-effect="fadeIn" data-effect-delay="100">Willkommen bei <strong>Miosk</strong></h2>
                     <div class="separator object-non-visible mt-10" data-animation-effect="fadeIn" data-effect-delay="100"></div>
-                    <p class="text-center object-non-visible" data-animation-effect="fadeIn" data-effect-delay="100">Informiere dich über aktuelle Preise, Aktionen und Verfügbarkeit von den Produkten.</p>
+                    <p class="text-center object-non-visible" data-animation-effect="fadeIn" data-effect-delay="100">Informieren Sie sich über aktuelle Preise, Aktionen und Verfügbarkeit von den Produkten.</p>
                 </div>
             </div>
         </div>
@@ -103,8 +103,8 @@
                     <div class="call-to-action text-center">
                         <div class="row">
                             <div class="col-sm-8">
-                                <h1 class="title">Jetzt Registrieren!</h1>
-                                <p>Lege ein Benutzerkonto an und profitiere von Vorteilen wie z.B. Bestellungen abgeben, oder den Kiosk zum öffnen bitten.</p>
+                                <h1 class="title">Coming Soon!</h1>
+                                <p>Legen Sie ein Benutzerkonto an und profitieren Sie von Vorteilen wie z.B. Bestellungen aufgeben, oder Miosk bitten zu öffnen.</p>
                             </div>
                             <div class="col-sm-4">
                                 <br>

@@ -64,7 +64,7 @@
         <div class="col-md-8 text-center col-md-offset-2 pv-20">
             <h2 class="title object-non-visible" data-animation-effect="fadeIn" data-effect-delay="100">Vorteile eines <strong>Benutzerkontos</strong></h2>
             <div class="separator object-non-visible mt-10" data-animation-effect="fadeIn" data-effect-delay="100"></div>
-            <p class="text-center object-non-visible" data-animation-effect="fadeIn" data-effect-delay="100">Ein Benutzerkonto ist innert kürze erstellt. Sie benötigen nur eine E-Mail Adresse dazu. Danach profitieren Sie von verschiedenen Diensten. Nehmen Sie sich 1 Minute und lesen Sie mehr darüber.</p>
+            <p class="text-center object-non-visible" data-animation-effect="fadeIn" data-effect-delay="100">Ein Benutzerkonto ist innert kürze erstellt. Sie benötigen nur eine E-Mail Adresse dazu. Danach profitieren Sie von verschiedenen Dienstleistungen. Nehmen Sie sich 1 Minute und lesen Sie mehr darüber.</p>
         </div>
     </div>
 </div>
@@ -102,9 +102,9 @@
                     <div class="col-md-4 col-sm-6">
                         <div class="ph-20 feature-box text-center object-non-visible" data-animation-effect="fadeInDownSmall" data-effect-delay="300">
                             <span class="icon large default-bg circle"><i class="fa fa-bell"></i></span>
-                            <h3>Kiosk Öffnen</h3>
+                            <h3>Miosk Öffnen</h3>
                             <div class="separator clearfix"></div>
-                            <p class="text-muted">Sie haben gerade Pause aber der Kiosk ist geschlossen? Mit einem Knopfdruck informieren Sie mich und sofern möglich wird der Kiosk geöffnet.</p>
+                            <p class="text-muted">Sie haben gerade Pause aber Miosk ist geschlossen? Mit einem Knopfdruck informieren Sie mich und sofern möglich wird Miosk geöffnet.</p>
                         </div>
                     </div>
                     <div class="clearfix visible-md"></div>
