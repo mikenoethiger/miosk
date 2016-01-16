@@ -25,7 +25,7 @@ class VisitorManager {
     }
 
     public static function getVisitor($visitorId) {
-        return Visitor::where('visitorr_id', '=', $visitorId)->first();
+        return Visitor::where('visitor_id', '=', $visitorId)->first();
     }
 
     public static function updateLastVisit($visitorId) {
@@ -44,6 +44,6 @@ class VisitorManager {
     }
 
     public static function getVisitorById($visitorId) {
-        return Visitor::where('visitorr_id', '=', $visitorId)->first();
+        return Visitor::where('visitor_id', '=', $visitorId)->first();
     }
 }
