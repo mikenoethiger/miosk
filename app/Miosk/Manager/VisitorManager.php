@@ -15,7 +15,7 @@ class VisitorManager {
 
     public static function registerVisitor() {
         $visitorId = uniqid();
-        Cookie::queue('visitor_id', $visitorId, 2628000);
+        Cookie::queue('visitorr_id', $visitorId, 2628000);
         $visitor = new Visitor();
         $visitor->visitor_id = $visitorId;
         $visitor->last_visit = new \DateTime();
@@ -25,7 +25,7 @@ class VisitorManager {
     }
 
     public static function getVisitor($visitorId) {
-        return Visitor::where('visitor_id', '=', $visitorId)->first();
+        return Visitor::where('visitorr_id', '=', $visitorId)->first();
     }
 
     public static function updateLastVisit($visitorId) {
@@ -44,6 +44,6 @@ class VisitorManager {
     }
 
     public static function getVisitorById($visitorId) {
-        return Visitor::where('visitor_id', '=', $visitorId)->first();
+        return Visitor::where('visitorr_id', '=', $visitorId)->first();
     }
 }
