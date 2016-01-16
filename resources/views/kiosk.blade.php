@@ -65,7 +65,7 @@
 <div class="page-wrapper">
     <!-- banner start -->
     <!-- ================ -->
-    <div class="banner dark-translucent-bg padding-bottom-clear" style="background-image:url('images/bottles.jpg'); background-size: cover">
+    <div class="banner dark-translucent-bg padding-bottom-clear" style="background-image:url('images/bottles-low-quality.png'); background-size: cover">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 text-center col-md-offset-2 pv-20">

@@ -56,7 +56,7 @@
 <!-- "page-loader-1 ... page-loader-6": add a page loader to the page (more info @components-page-loaders.html) -->
 <body class="no-trans   ">
 
-<div class="banner dark-translucent-bg" style="background-image:url('images/pay.jpg'); background-position: 50% 32%;">
+<div class="banner dark-translucent-bg" style="background-image:url('images/pay-low-quality.png'); background-position: 50% 32%;">
 
 <!-- breadcrumb end -->
 <div class="container">
