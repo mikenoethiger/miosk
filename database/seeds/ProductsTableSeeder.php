@@ -24,55 +24,68 @@ class ProductsTableSeeder extends Seeder
         $spitzbubImage = \App\Miosk\Manager\ImageManager::copyImage(storage_path() . '/seed_images/spitzbub.png');
         $trojkaEnergyImage = \App\Miosk\Manager\ImageManager::copyImage(storage_path() . '/seed_images/trojka_energy.png');
 
-        DB::table('products')->insert([
+        $drinksCategory = \App\Category::create([
+            'name' => 'drinks',
+        ]);
+        $foodCategory = \App\Category::create([
+            'name' => 'food',
+        ]);
+
+        \App\Product::create([
             'name' => "Nestea Lemon",
             'description' => 'Icea Tea Lemon 0.5l Flasche',
             'price' => 2.5,
             'sale_price' => 2,
             'image_path' => $lemonImage,
             'quantity' => 1
-        ]);
-        DB::table('products')->insert([
+        ])->categories()->attach($drinksCategory->id);
+
+        \App\Product::create([
             'name' => "Nestea Peach",
             'description' => 'Icea Tea Peach 0.5l Flasche',
             'price' => 2.5,
             'sale_price' => 2,
             'image_path' => $peachImage,
             'quantity' => 1
-        ]);
-        DB::table('products')->insert([
+        ])->categories()->attach($drinksCategory->id);
+
+        \App\Product::create([
             'name' => "Coca Cola",
             'description' => 'Coca Cola 0.5l Flasche',
             'price' => 2.5,
             'sale_price' => null,
             'image_path' => $colaImage,
             'quantity' => 0
-        ]);
-        DB::table('products')->insert([
+        ])->categories()->attach($drinksCategory->id);
+
+        \App\Product::create([
             'name' => "Fanta",
             'description' => 'Fanta 0.5l Flasche',
             'price' => 2.5,
             'sale_price' => null,
             'image_path' => $fantaImage,
             'quantity' => 1
-        ]);
-        DB::table('products')->insert([
+        ])->categories()->attach($drinksCategory->id);
+
+        \App\Product::create([
             'name' => "Rivella",
             'description' => 'Rivella 0.5l Flasche',
             'price' => 2.5,
             'sale_price' => null,
             'image_path' => $rivellaImage,
             'quantity' => 1
-        ]);
-        DB::table('products')->insert([
+        ])->categories()->attach($drinksCategory->id);
+
+        \App\Product::create([
             'name' => "Rivella Rhabarber",
             'description' => 'Rivella Rhabarber 0.5l Flasche',
             'price' => 2.5,
             'sale_price' => null,
             'image_path' => $rivellaRhabarberImage,
             'quantity' => 1
-        ]);
-        DB::table('products')->insert([
+        ])->categories()->attach($drinksCategory->id);
+
+        \App\Product::create([
             'name' => "Trojka Energy",
             'description' => 'Trojka Energy Drink 0.5l Dose',
             'price' => 3,
@@ -80,45 +93,50 @@ class ProductsTableSeeder extends Seeder
             'image_path' => $trojkaEnergyImage,
             'quantity' => 0
         ]);
-        DB::table('products')->insert([
+
+        \App\Product::create([
             'name' => "Ovo Drink",
             'description' => 'Ovo Drink 0.5l Flasche',
             'price' => 3.5,
             'sale_price' => null,
             'image_path' => $ovoImage,
             'quantity' => 1
-        ]);
-        DB::table('products')->insert([
+        ])->categories()->attach($drinksCategory->id);
+
+        \App\Product::create([
             'name' => "Spitzbub",
             'description' => 'Berger Spitzbub',
             'price' => 2.5,
             'sale_price' => null,
             'image_path' => $spitzbubImage,
             'quantity' => 1
-        ]);
-        DB::table('products')->insert([
+        ])->categories()->attach($foodCategory->id);
+
+        \App\Product::create([
             'name' => "Chupa Chups",
             'description' => 'Chupa Chups in den Geschmäckern Cola, Kirsche & Orange',
             'price' => 0.5,
             'sale_price' => null,
             'image_path' => $chupaImage,
             'quantity' => 1
-        ]);
-        DB::table('products')->insert([
+        ])->categories()->attach($foodCategory->id);
+
+        \App\Product::create([
             'name' => "Snickers",
             'description' => '50g Snickers Riegel',
             'price' => 1.5,
             'sale_price' => null,
             'image_path' => $snickersImage,
             'quantity' => 1
-        ]);
-        DB::table('products')->insert([
+        ])->categories()->attach($foodCategory->id);
+
+        \App\Product::create([
             'name' => "Knoppers",
             'description' => '50g Crispy Knoppers',
             'price' => 2.5,
             'sale_price' => null,
             'image_path' => $knoppersImage,
             'quantity' => 1
-        ]);
+        ])->categories()->attach($foodCategory->id);
     }
 }

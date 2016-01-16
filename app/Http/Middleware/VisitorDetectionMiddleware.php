@@ -19,8 +19,6 @@ class VisitorDetectionMiddleware
     public function handle($request, Closure $next)
     {
         $visitorId = Request::cookie('visitor_id');
-        Log::info($visitorId);
-        Log::info(Request::hasCookie('visitor_id'));
 
         // Register the visitor if the visitorId is not set yet
         if ($visitorId == null) {

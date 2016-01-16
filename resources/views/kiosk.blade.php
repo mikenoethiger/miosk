@@ -6,7 +6,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Kiosk Halle 4</title>
+    <title>Miosk</title>
     <meta name="description" content="Verpflegung für zwischendurch">
     <meta name="author" content="htmlcoder.me">
 
@@ -81,11 +81,12 @@
             <div class="container">
                 <!-- filters start -->
                 <div class=" text-center mb-20">
-                    <form class="form-inline" >
+                    <form class="form-inline" method="post" action="/search">
+                        {{ csrf_field() }}
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Produkte durchsuchen">
+                            <input name="search" type="text" class="form-control" placeholder="Produkte durchsuchen">
                         </div>
-                        <a href="#" class="btn btn-default">Suchen</a>
+                        <button type="submit" href="#" class="btn btn-default">Suchen</button>
                     </form>
                 </div>
                 <!-- filters end -->
@@ -94,6 +95,27 @@
         <!-- section end -->
     </div>
     <!-- banner end -->
+
+    <section class="section default-bg clearfix">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="call-to-action text-center">
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <h1 class="title">Jetzt Registrieren!</h1>
+                                <p>Lege ein Benutzerkonto an und profitiere von Vorteilen wie z.B. Bestellungen abgeben, oder den Kiosk zum öffnen bitten.</p>
+                            </div>
+                            <div class="col-sm-4">
+                                <br>
+                                <p><a href="/services" class="btn btn-lg btn-gray-transparent btn-animated">Mehr Erfahren<i class="fa fa-arrow-right pl-20"></i></a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- main-container start -->
     <!-- ================ -->
@@ -113,9 +135,9 @@
                         </div>
                     @endif
                         <ul class="nav nav-pills" role="tablist">
-                            <li class="active"><a href="/all" role="tab" title="Alle"><i class="icon-star"></i> Alle</a></li>
-                            <li><a href="/drinks" role="tab" title="Getränke"><i class="fa fa-glass"></i> Getränke</a></li>
-                            <li><a href="/food" role="tab" title="Esswaren"><i class="fa fa-cutlery"></i> Esswaren</a></li>
+                            <li class="{{ $filter == "all" ? "active" : "" }}"><a href="/" role="tab" title="Alle"><i class="icon-star"></i> Alle</a></li>
+                            <li class="{{ $filter == "drinks" ? "active" : "" }}"><a href="/drinks" role="tab" title="Getränke"><i class="fa fa-glass"></i> Getränke</a></li>
+                            <li class="{{ $filter == "food" ? "active" : "" }}"><a href="/food" role="tab" title="Esswaren"><i class="fa fa-cutlery"></i> Esswaren</a></li>
                         </ul>
                     <!-- pills start -->
                     <!-- ================ -->
