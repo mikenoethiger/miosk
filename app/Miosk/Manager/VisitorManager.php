@@ -13,9 +13,11 @@ use Illuminate\Support\Facades\Cookie;
 
 class VisitorManager {
 
+    const VISITOR_COOKIE_IDENTIFIER = "visitor";
+
     public static function registerVisitor() {
         $visitorId = uniqid();
-        Cookie::queue('visitorr_id', $visitorId, 2628000);
+        Cookie::queue(VisitorManager::VISITOR_COOKIE_IDENTIFIER, $visitorId, 2628000);
         $visitor = new Visitor();
         $visitor->visitor_id = $visitorId;
         $visitor->last_visit = new \DateTime();
