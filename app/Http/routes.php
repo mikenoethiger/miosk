@@ -21,6 +21,12 @@ Route::get('/drinks', 'PublicController@drinks');
 Route::get('/food', 'PublicController@food');
 Route::post('/search', 'PublicController@search');
 Route::get('/services', 'PublicController@services');
+Route::get('/member', function() {
+    $products = \App\Product::all();
+    $filter = "all";
+    return view('member-shop', compact('products', 'filter'));
+    //return File::get(public_path() . '/member_app/index.html');
+});
 
 Route::resource('suggestion', 'SuggestionController',
     ['only' => ['store', 'destroy', 'update']]);

@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <title>Miosk</title>
     <meta name="description" content="Verpflegung für zwischendurch">
-    <meta name="author" content="htmlcoder.me">
+    <meta name="author" content="">
 
     <!-- Mobile Meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -119,7 +119,7 @@
 
     <!-- main-container start -->
     <!-- ================ -->
-    <section class="main-container">
+    <section class="main-container light-gray-bg">
 
         <div class="container">
             <div class="row">
@@ -163,19 +163,14 @@
                                             </div>
                                             <div class="body">
                                                 <h3>{{ $product->name }}</h3>
-                                                <p class="small"> {{ $product->description }}</p>
+
                                                 <div class="elements-list clearfix">
                                                     @if($product->sale_price == null)
                                                         <span class="price">{{ number_format($product->price, 2, ',', '\'') }} CHF</span>
                                                     @else
                                                         <span class="price"><del>{{ number_format($product->price, 2, ',', '\'') }} CHF</del> {{ number_format($product->sale_price, 2, ',', '\'') }} CHF</span>
                                                     @endif
-                                                        <a href="javascript:$('#like-form-{{ $product->id }}').submit();" class="pull-right margin-clear btn btn-sm btn-danger btn-animated">Mag ich<i class="fa fa-heart"></i></a>
 
-                                                        <form id="like-form-{{ $product->id }}" role="form" method="POST" enctype="multipart/form-data"  action="/ranking">
-                                                            {!! csrf_field() !!}
-                                                            <input type="hidden" name="product_id" value="{{ $product->id }}">
-                                                        </form>
                                                 </div>
                                             </div>
                                         </div>
