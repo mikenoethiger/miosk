@@ -27,7 +27,7 @@
                             <div class="row masonry-grid-fitrows grid-space-10">
 
                                 @foreach ($products as $product)
-                                <div class="col-md-4 masonry-grid-item">
+                                <div class="col-md-3 masonry-grid-item">
                                     <div class="listing-item white-bg bordered mb-20">
                                         <div class="overlay-container">
                                             <img src="/product_images/{{ $product->image_path }}" alt="">
