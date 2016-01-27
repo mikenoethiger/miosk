@@ -89,7 +89,7 @@
                                 <a href="/services" class="menu-button"><i class="fa fa-star"></i></a>
                                 <a href="/auth/login" class="menu-button"><i class="fa fa-user"></i></a>
                             </div>
-                            
+
                         </div>
                     </div>
                     <!-- header-top-first end -->

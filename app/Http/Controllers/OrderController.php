@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
 
 class OrderController extends Controller
@@ -40,7 +41,6 @@ class OrderController extends Controller
      */
     public function store(Requests\StoreOrderRequest $request)
     {
-        Log::info('Passed validation');
         $order = \App\Order::create([
             'destination' => $request->input('delivery'),
             'user_id' => Auth::user()->id
@@ -49,6 +49,13 @@ class OrderController extends Controller
         foreach ($request->input('items') as $item) {
             $order->products()->attach($item['productId'], ['quantity' => $item['quantity']]);
         }
+
+        $user = Auth::user();
+        Mail::send('emails.order', compact('user', 'order'), function ($m) {
+            $m->from('janiceschafer.ch@gmail.com', 'miosk - bestellung');
+
+            $m->to('noethiger.mike@gmail.com')->subject('Bestellung');
+        });
 
         return $order;
      }

@@ -19,7 +19,7 @@ class ApiController extends Controller
         $email = $user->email;
 
         Mail::send('emails.alarm', compact('prename', 'name', 'email'), function ($m) {
-            $m->from('janiceschafer.ch@gmail.com', 'miosk');
+            $m->from('janiceschafer.ch@gmail.com', 'miosk - alarm');
 
             $m->to('noethiger.mike@gmail.com')->subject('Bitte Kiosk Öffnen');
         });
