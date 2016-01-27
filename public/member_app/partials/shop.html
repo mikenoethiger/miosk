@@ -58,7 +58,7 @@
                         <div class="row masonry-grid-fitrows grid-space-10">
                             <div ng-repeat="product in products | filter: {categories: {name: categoryFilter}}" class="col-lg-3 col-md-4 col-xs-6 masonry-grid-item">
                                 {{ product.quantity }}
-                                <div ng-show="product.quantity === 0" class="ribbon-red"><span>AUSVERKAUFT</span></div>
+                                <div ng-show="product.quantity == 0" class="ribbon-red"><span>AUSVERKAUFT</span></div>
                                 <div ng-show="product.sale_price" class="ribbon-blue"><span>{{ getSaleInPercentage(product) }}
                                                         % Rabatt</span></div>
                                 <div class="listing-item white-bg bordered mb-20">
@@ -76,7 +76,7 @@
                                                         <span ng-show="product.sale_price == null" class="price">{{ product.price | number:2 }} CHF</span>
 
                                                         <span ng-show="product.sale_price != null" class="price"><del>{{ product.price | number:2 }} CHF</del> {{ product.sale_price | number:2 }} CHF</span>
-                                            <a href ng-hide="product.quantity === 0" ng-click="addProductToBasket(product)" class="pull-right margin-clear btn btn-sm btn-default-transparent btn-animated">Warenkorb<i
+                                            <a href ng-hide="product.quantity == 0" ng-click="addProductToBasket(product)" class="pull-right margin-clear btn btn-sm btn-default-transparent btn-animated">Warenkorb<i
                                                     class="fa fa-shopping-cart"></i></a>
                                         </div>
                                     </div>
