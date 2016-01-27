@@ -1,0 +1,128 @@
+<div class="page-wrapper">
+    <!-- main-container start -->
+    <!-- ================ -->
+    <section class="main-container">
+
+
+        <section ng-hide="ngCart.getTotalItems()" class="main-container">
+
+            <div class="container">
+                <div class="row">
+
+                    <!-- main start -->
+                    <!-- ================ -->
+                    <div class="main col-md-8 col-md-offset-2">
+
+                        <!-- page-title start -->
+                        <!-- ================ -->
+                        <h1 class="page-title text-center"><i class="fa fa-shopping-cart pl-10"></i></h1>
+                        <div class="separator"></div>
+                        <!-- page-title end -->
+                        <p class="lead text-center">Sie haben momentan kein Produkt im Warenkorb</p>
+                        <p class="text-center">
+                            <a href="/member#/shop" class="btn btn-default btn-lg">Jetzt Einkaufen</a>
+                        </p>
+
+                    </div>
+                    <!-- main end -->
+
+                </div>
+            </div>
+        </section>
+
+        <div ng-show="ngCart.getTotalItems()" class="container">
+            <div class="row">
+                <!-- main start -->
+                <!-- ================ -->
+                <div class="main col-md-12">
+                    <!-- page-title start -->
+                    <!-- ================ -->
+                    <h1 class="page-title">Checkout</h1>
+
+                    <div class="separator-2"></div>
+                    <!-- page-title end -->
+
+                    <div ng-repeat="error in errors" class="alert  alert-icon alert-danger" role="alert">
+                        <i class="fa fa-times"></i>
+                        {{ error }}
+                    </div>
+
+                    <table class="table cart">
+                        <thead>
+                        <tr>
+                            <th>Produkt</th>
+                            <th>Preis</th>
+                            <th>Anzahl</th>
+                            <th class="amount">Total</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="cartItem in ngCart.getItems()">
+                            <td class="product">{{ cartItem.getName() }}</td>
+                            <td class="price">CHF {{ cartItem.getPrice() | number:2 }}</td>
+                            <td class="quantity">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" value="{{ cartItem.getQuantity() }}"
+                                           disabled>
+                                </div>
+                            </td>
+                            <td class="amount">CHF {{ cartItem.getTotal() | number:2 }}</td>
+                        </tr>
+                        <tr>
+                            <td class="total-quantity" colspan="3">Total {{ ngCart.getTotalItems() }} Produkte</td>
+                            <td class="total-amount">CHF {{ ngCart.totalCost() | number:2 }}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div class="space-bottom"></div>
+                    <fieldset>
+                        <legend>Lieferung</legend>
+                        <form role="form" class="form-horizontal" id="shipping-information-container">
+                            <div id="shipping-information" class="space-bottom">
+                                <div class="row">
+                                    <div class="col-lg-3">
+                                        <h3 class="title">Lieferservice</h3>
+                                    </div>
+                                    <div class="col-lg-8 col-lg-offset-1">
+                                        <div class="form-group">
+                                            <label>
+                                                <input type="radio" ng-model="delivery" name="delivery"
+                                                       id="shipping-info-check" value="wache"> Lieferung auf die Wache
+                                                bringen.
+                                            </label>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>
+                                                <input type="radio" ng-model="delivery" name="delivery"
+                                                       id="shipping-info-check" value="uk_mittag"> Lieferung in der UK
+                                                abholen (Heute 12:30 Uhr).
+                                            </label>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>
+                                                <input type="radio" ng-model="delivery" name="delivery"
+                                                       id="shipping-info-check" value="uk_abend"> Lieferung in der UK
+                                                abholen (Heute 18:30 Uhr).
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="space"></div>
+                            </div>
+                        </form>
+                    </fieldset>
+                    <div class="text-right">
+                        <a href="/member#/cart" class="btn btn-group btn-default"><i class="icon-left-open-big"></i> Zum
+                            Warenkorb</a>
+                        <a href="" ng-click="checkout()" ng-disabled="processingCheckout" class="btn btn-group btn-default"><i class="icon-check"></i>
+                            Kaufen</a>
+                    </div>
+
+                </div>
+                <!-- main end -->
+
+            </div>
+        </div>
+    </section>
+    <!-- main-container end -->
+</div>

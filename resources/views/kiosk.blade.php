@@ -47,6 +47,9 @@
 
     <!-- Custom css -->
     <link href="/the_project/css/custom.css" rel="stylesheet">
+
+    <link href="/menu.css" rel="stylesheet">
+
 </head>
 
 <!-- body classes:  -->
@@ -63,6 +66,38 @@
 <!-- page wrapper start -->
 <!-- ================ -->
 <div class="page-wrapper">
+    <div class="header-top dark ">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <!-- header-top-first start -->
+                    <!-- ================ -->
+                    <div class="header-top-first clearfix">
+                        <div class="social-links hidden-xs circle small">
+                            <div class="btn-group">
+                                <a href="/" class="menu-button hidden-xs"><i class="fa fa-home"></i> Shop</a>
+                                <a href="/services" class="menu-button hidden-xs"><i class="fa fa-star"></i>
+                                    Dienstleistungen</a>
+                                <a href="/auth/login" class="menu-button hidden-xs"><i class="fa fa-user"></i>
+                                    Login</a>
+                            </div>
+                        </div>
+
+                        <div class="social-links hidden-lg hidden-md hidden-sm circle small">
+                            <div class="btn-group">
+                                <a href="/" class="menu-button"><i class="fa fa-home"></i></a>
+                                <a href="/services" class="menu-button"><i class="fa fa-star"></i></a>
+                                <a href="/auth/login" class="menu-button"><i class="fa fa-user"></i></a>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <!-- header-top-first end -->
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- banner start -->
     <!-- ================ -->
     <div class="banner dark-translucent-bg padding-bottom-clear" style="background-image:url('images/bottles-low-quality.png'); background-size: cover">
@@ -81,13 +116,9 @@
             <div class="container">
                 <!-- filters start -->
                 <div class=" text-center mb-20">
-                    <form class="form-inline" method="post" action="/search">
-                        {{ csrf_field() }}
-                        <div class="form-group">
-                            <input name="search" type="text" class="form-control" placeholder="Produkte durchsuchen">
-                        </div>
-                        <button type="submit" href="#" class="btn btn-default">Suchen</button>
-                    </form>
+                    <a href="/member" class="btn btn-animated btn-lg btn-gray-transparent">Zum Memberbereich<i
+                                class="fa fa-star"></i></a>
+
                 </div>
                 <!-- filters end -->
             </div>
@@ -103,7 +134,7 @@
                     <div class="call-to-action text-center">
                         <div class="row">
                             <div class="col-sm-8">
-                                <h1 class="title">Coming Soon!</h1>
+                                <h1 class="title">Jetzt registrieren</h1>
                                 <p>Legen Sie ein Benutzerkonto an und profitieren Sie von Vorteilen wie z.B. Bestellungen aufgeben, oder Miosk bitten zu öffnen.</p>
                             </div>
                             <div class="col-sm-4">

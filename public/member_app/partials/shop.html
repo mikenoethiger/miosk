@@ -1,0 +1,92 @@
+<div class="banner dark-translucent-bg padding-bottom-clear"
+     style="background-image:url('/images/bottles-low-quality.png'); background-size: cover">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 text-center col-md-offset-2 pv-20">
+                <h2 class="title object-non-visible animated fadeIn">
+                    Willkommen im <strong>Memberbereich</strong></h2>
+
+                <div class="separator object-non-visible mt-10 animated fadeIn"></div>
+                <p class="text-center object-non-visible  animated fadeIn" data-animation-effect="fadeIn" data-effect-delay="100">
+                    Informieren Sie sich über aktuelle Preise, Aktionen und Verfügbarkeit von den Produkten.</p>
+            </div>
+        </div>
+    </div>
+    <!-- section start -->
+    <!-- ================ -->
+    <div class="dark-translucent-bg section">
+        <div class="container">
+            <!-- filters start -->
+            <div class=" text-center mb-20">
+
+                    <button data-toggle="modal" data-target="#alarmModal" class="btn btn-animated btn-lg btn-gray-transparent">Kiosk Öffnen<i
+                            class="fa fa-bell"></i></button>
+
+            </div>
+            <!-- filters end -->
+        </div>
+    </div>
+    <!-- section end -->
+</div>
+<!-- banner end -->
+<!-- main-container start -->
+<!-- ================ -->
+<section class="main-container">
+
+    <div class="container">
+        <div class="row">
+            <!-- main start -->
+            <!-- ================ -->
+            <div class="main col-md-12">
+
+                <ul class="nav nav-pills" role="tablist">
+                    <li ng-class="{active: categoryFilter == undefined}"><a href="/member#/shop" role="tab" title="Alle"><i
+                            class="icon-star"></i> Alle</a></li>
+                    <li ng-class="{active: categoryFilter == 'drinks'}"><a href="/member#/shop/drinks" role="tab"
+                                    title="Getränke"><i
+                            class="fa fa-glass"></i> Getränke</a></li>
+                    <li ng-class="{active: categoryFilter == 'food'}"><a href="/member#/shop/food" role="tab" title="Esswaren"><i
+                            class="fa fa-cutlery"></i> Esswaren</a></li>
+                </ul>
+                <!-- pills start -->
+                <!-- ================ -->
+                <!-- Nav tabs -->
+
+                <!-- Tab panes -->
+                <div class="tab-content clear-style">
+                    <div class="tab-pane active" id="pill-1">
+                        <div class="row masonry-grid-fitrows grid-space-10">
+                            <div ng-repeat="product in products | filter: {categories: {name: categoryFilter}}" class="col-lg-3 col-md-4 col-xs-6 masonry-grid-item">
+                                <div ng-show="product.quantity === 0" class="ribbon-red"><span>AUSVERKAUFT</span></div>
+                                <div ng-show="product.sale_price" class="ribbon-blue"><span>{{ getSaleInPercentage(product) }}
+                                                        % Rabatt</span></div>
+                                <div class="listing-item white-bg bordered mb-20">
+                                    <div class="overlay-container">
+                                        <img ng-src="/product_images/{{ product.image_path }}" alt="">
+                                        <a class="overlay-link popup-img-single"
+                                           ng-href="/product_images/{{ product.image_path }}"><i
+                                                class="fa fa-search-plus"></i></a>
+
+
+                                    </div>
+                                    <div class="body">
+                                        <h3>{{ product.name }}</h3>
+                                        <div class="elements-list clearfix">
+                                                        <span ng-show="product.sale_price == null" class="price">{{ product.price | number:2 }} CHF</span>
+
+                                                        <span ng-show="product.sale_price != null" class="price"><del>{{ product.price | number:2 }} CHF</del> {{ product.sale_price | number:2 }} CHF</span>
+                                            <a href ng-hide="product.quantity === 0" ng-click="addProductToBasket(product)" class="pull-right margin-clear btn btn-sm btn-default-transparent btn-animated">Warenkorb<i
+                                                    class="fa fa-shopping-cart"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- main-container end -->

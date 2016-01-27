@@ -47,6 +47,9 @@
 
     <!-- Custom css -->
     <link href="/the_project/css/custom.css" rel="stylesheet">
+
+    <link href="/menu.css" rel="stylesheet">
+
 </head>
 
 <!-- body classes:  -->
@@ -55,7 +58,36 @@
 <!-- "transparent-header": makes the header transparent and pulls the banner to top -->
 <!-- "page-loader-1 ... page-loader-6": add a page loader to the page (more info @components-page-loaders.html) -->
 <body class="no-trans   ">
+<div class="header-top dark ">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <!-- header-top-first start -->
+                <!-- ================ -->
+                <div class="header-top-first clearfix">
+                    <div class="social-links hidden-xs circle small">
+                        <div class="btn-group">
+                            <a href="/" class="menu-button hidden-xs"><i class="fa fa-home"></i> Shop</a>
+                            <a href="/services" class="menu-button hidden-xs"><i class="fa fa-star"></i>
+                                Dienstleistungen</a>
+                            <a href="/auth/login" class="menu-button hidden-xs"><i class="fa fa-user"></i>
+                                Login</a>
+                        </div>
+                    </div>
 
+                    <div class="social-links hidden-lg hidden-md hidden-sm circle small">
+                        <div class="btn-group">
+                            <a href="/" class="menu-button"><i class="fa fa-home"></i></a>
+                            <a href="/services" class="menu-button"><i class="fa fa-star"></i></a>
+                            <a href="/auth/login" class="menu-button"><i class="fa fa-user"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- header-top-first end -->
+            </div>
+        </div>
+    </div>
+</div>
 <div class="banner dark-translucent-bg" style="background-image:url('images/pay-low-quality.png'); background-position: 50% 32%;">
 
 <!-- breadcrumb end -->
@@ -113,7 +145,7 @@
                             <span class="icon large dark-bg circle"><i class="fa fa-percent"></i></span>
                             <h3>Grossbestellungen</h3>
                             <div class="separator clearfix"></div>
-                            <p class="text-muted">Sie profitieren von Rabatten bei grösseren Bestellungen. Ab einem Bestellwert von CHF 10.- gibt es 10% Rabatt und ab CHF 20.- gibt es 20% Rabatt.</p>
+                            <p class="text-muted">Sie profitieren von Rabatten bei grösseren Bestellungen. Ab einem Bestellwert von CHF 20.- gibt es 10% Rabatt auf Ihren Einkauf.</p>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-6">
@@ -143,10 +175,10 @@
                 <div class="call-to-action text-center">
                     <div class="row">
                         <div class="col-sm-8">
-                            <h1 class="title">Coming Soon!</h1>
+                            <h1 class="title">Jetzt Ein Konto Eröffnen</h1>
                         </div>
                         <div class="col-sm-4">
-                            <p><a href="/" class="btn btn-lg btn-gray-transparent btn-animated">Zurück zur Startseite<i class="fa fa-home pl-20"></i></a></p>
+                            <p><a href="/auth/register" class="btn btn-lg btn-gray-transparent btn-animated">Konto Eröffnen<i class="fa fa-user pl-20"></i></a></p>
                         </div>
                     </div>
                 </div>

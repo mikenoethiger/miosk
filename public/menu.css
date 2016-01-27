@@ -1,0 +1,14 @@
+.menu-button {
+    padding: 1px 15px 0px;
+    font-size: 16px;
+    color: #999999;
+    text-align: center;
+}
+
+.menu-button:hover,.menu-button:focus {
+    padding: 1px 15px 0px;
+    font-size: 16px;
+    color: #999999;
+    text-align: center;
+    text-decoration: none;
+}
