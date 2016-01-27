@@ -101,7 +101,7 @@
                                         <a href="/member#/settings" class="menu-button"><i class="fa fa-cog"></i></a>
                                         <a href="/member#/feedback" class="menu-button"><i
                                                     class="fa fa-comment"></i></a>
-                                        <a href="/mebmer/logout" class="menu-button"><i class="fa fa-sign-out"></i></a>
+                                        <a href="/auth/logout" class="menu-button"><i class="fa fa-sign-out"></i></a>
                                     </div>
                                 </ul>
                             </div>
