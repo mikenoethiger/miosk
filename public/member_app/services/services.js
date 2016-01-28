@@ -66,7 +66,6 @@ memberApp.service('ngCartHelper', ['ngCart', function (ngCart) {
         }
         else {
             price = product.sale_price ? product.sale_price : product.price;
-            console.log(product);
             ngCart.addItem(product.id, product.name, price, 1);
         }
     };
