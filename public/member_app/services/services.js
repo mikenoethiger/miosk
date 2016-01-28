@@ -20,7 +20,12 @@ memberApp.service('Notify', function () {
                 y: 50
             },
             delay: delay,
-            type: type
+            type: type,
+            showProgressbar: true,
+            animate: {
+                enter: 'animated fadeInRight',
+                exit: 'animated fadeOutRight'
+            }
         });
     };
 
@@ -52,5 +57,21 @@ memberApp.service('ngCartHelper', ['ngCart', function (ngCart) {
             })
         });
         return items;
-    }
+    };
+
+    this.addProduct = function(product) {
+        cardItem = ngCart.getItemById(product.id);
+        if (cardItem) {
+            cardItem.setQuantity(cardItem.getQuantity()+1);
+        }
+        else {
+            price = product.sale_price ? product.sale_price : product.price;
+            ngCart.addItem(product.id, product.name, price, 1);
+        }
+    };
+
+    // Returns the total cost including discounts
+    this.getTotalCost = function() {
+        return ngCart.totalCost() >= 20 ? ngCart.totalCost() * 0.9 : ngCart.totalCost();
+    };
 }]);

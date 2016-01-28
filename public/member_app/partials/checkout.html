@@ -70,7 +70,7 @@
                         </tr>
                         <tr>
                             <td class="total-quantity" colspan="3">Total {{ ngCart.getTotalItems() }} Produkte</td>
-                            <td class="total-amount">CHF {{ ngCart.totalCost() | number:2 }}</td>
+                            <td class="total-amount" style="width: 200px;"><span ng-show="salePrice" class="price"><del>CHF {{ ngCart.totalCost() | number:2 }}</del></span><br> CHF {{ ngCartHelper.getTotalCost() | number:2 }}</td>
                         </tr>
                         </tbody>
                     </table>
@@ -86,21 +86,21 @@
                                     <div class="col-lg-8 col-lg-offset-1">
                                         <div class="form-group">
                                             <label>
-                                                <input type="radio" ng-model="delivery" name="delivery"
+                                                <input type="radio" ng-model="destination" name="destination"
                                                        id="shipping-info-check" value="wache"> Lieferung auf die Wache
                                                 bringen.
                                             </label>
                                         </div>
                                         <div class="form-group">
                                             <label>
-                                                <input type="radio" ng-model="delivery" name="delivery"
+                                                <input type="radio" ng-model="destination" name="destination"
                                                        id="shipping-info-check" value="uk_mittag"> Lieferung in der UK
                                                 abholen (Heute 12:30 Uhr).
                                             </label>
                                         </div>
                                         <div class="form-group">
                                             <label>
-                                                <input type="radio" ng-model="delivery" name="delivery"
+                                                <input type="radio" ng-model="destination" name="destination"
                                                        id="shipping-info-check" value="uk_abend"> Lieferung in der UK
                                                 abholen (Heute 18:30 Uhr).
                                             </label>
