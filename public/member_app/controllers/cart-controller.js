@@ -9,9 +9,11 @@ memberApp.controller('CartController', ['$scope', 'ngCart', function($scope, ngC
 
     $scope.refreshCart = function() {
         angular.forEach($scope.quantities, function(quantity, key) {
-            ngCart.getItemById(key).setQuantity(quantity);
+            item = ngCart.getItemById(key);
+            console.log(item);
+            item.setQuantity(quantity);
         });
-    }
+    };
 
     $scope.removeCartItem = function(cartItem) {
         for (var i = 0; i < ngCart.getItems().length; i++) {
@@ -19,5 +21,5 @@ memberApp.controller('CartController', ['$scope', 'ngCart', function($scope, ngC
                 ngCart.removeItem(i);
             }
         }
-    }
+    };
 }]);
