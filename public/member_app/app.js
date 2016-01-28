@@ -5,7 +5,8 @@
 var memberApp = angular.module('memberApp', [
     'ngRoute',
     'ngResource',
-    'ngCart'
+    'ngCart',
+    'wu.masonry'
 ]);
 
 memberApp.config(['$routeProvider', '$locationProvider',
