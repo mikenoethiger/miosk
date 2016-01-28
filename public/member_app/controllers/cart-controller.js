@@ -9,8 +9,9 @@ memberApp.controller('CartController', ['$scope', 'ngCart', function($scope, ngC
 
     $scope.refreshCart = function() {
         console.log($scope.quantities);
-        console.log(ngCart.getItems());
+
         angular.forEach($scope.quantities, function(quantity, key) {
+            console.log(ngCart.getItems());
             item = ngCart.getItemById(key);
             console.log(key);
             console.log(item);
