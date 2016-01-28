@@ -7,6 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     /**
+     * Get the product's id.
+     *
+     * @param  string  $value
+     * @return int
+     */
+    public function getIdAttribute($value) {
+        return intval($value);
+    }
+
+    /**
      * Get the categories for the product.
      */
     public function categories()
