@@ -1,6 +1,7 @@
 
 memberApp.controller('ShopController', ['$rootScope', '$scope', '$routeParams', 'ngCart', 'ngCartHelper', 'Product', 'Notify', function($rootScope, $scope, $routeParams, ngCart, ngCartHelper, Product, Notify) {
     $scope.products = Product.query();
+    console.log($scope.products);
     $scope.ngCart = ngCart;
     $scope.categoryFilter = $routeParams.filter; // empty string means no filtering
 
