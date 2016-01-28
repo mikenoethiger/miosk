@@ -25,7 +25,7 @@ class StoreOrderRequest extends Request
     public function rules()
     {
         return [
-            'delivery' => 'required|in:wache,uk_mittag,uk_abend',
+            'destination' => 'required|in:wache,uk_mittag,uk_abend',
             'items' => 'required',
         ];
     }
@@ -38,8 +38,8 @@ class StoreOrderRequest extends Request
     public function messages()
     {
         return [
-            'delivery.required' => 'Wählen Sie ein Lieferservice aus.',
-            'delivery.in'  => 'Ungültiger Lieferservice.',
+            'destination.required' => 'Wählen Sie ein Lieferservice aus.',
+            'destination.in'  => 'Ungültiger Lieferservice.',
             'items.required' => 'Wählen Sie zuerst Produkte aus'
         ];
     }

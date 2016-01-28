@@ -147,7 +147,7 @@
                                                 <td class="total-quantity" colspan="2">
                                                     Total @{{ ngCart.getTotalItems() }} Produkte
                                                 </td>
-                                                <td class="total-amount">CHF @{{ ngCart.getSubTotal() | number:2 }}</td>
+                                                <td class="total-amount">CHF @{{ ngCart.totalCost() | number:2 }}</td>
                                             </tr>
                                             </tbody>
                                         </table>
@@ -272,7 +272,19 @@
 <script type="text/javascript"
         src="/bower_components/remarkable-bootstrap-notify/dist/bootstrap-notify.min.js"></script>
 
+<!-- Dependencies for angular-masonry: https://github.com/passy/angular-masonry -->
+<!-- Test -->
+<script src="/bower_components/jquery-bridget/jquery-bridget.js"></script>
+<script src="/bower_components/ev-emitter/ev-emitter.js"></script>
+<script src="/bower_components/desandro-matches-selector/matches-selector.js"></script>
+<script src="/bower_components/fizzy-ui-utils/utils.js"></script>
+<script src="/bower_components/outlayer/item.js"></script>
+<script src="/bower_components/outlayer/outlayer.js"></script>
+<script src="/bower_components/masonry/masonry.js"></script>
+<script src="/bower_components/imagesloaded/imagesloaded.js"></script>
+
 <script type="text/javascript" src="/bower_components/angular/angular.min.js"></script>
+<script type="text/javascript" src="/bower_components/angular-masonry/angular-masonry.js"></script>
 <script type="text/javascript" src="/bower_components/angular-route/angular-route.min.js"></script>
 <script type="text/javascript" src="/bower_components/angular-resource/angular-resource.min.js"></script>
 <script type="text/javascript" src="/bower_components/ngCart/dist/ngCart.js"></script>

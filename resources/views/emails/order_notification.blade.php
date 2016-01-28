@@ -1,6 +1,6 @@
 <?php
+$totalPrice = 0;
 foreach ($order->products as $product) {
-    $totalPrice = 0;
     $totalPrice += $product->pivot->quantity*($product->sale_price ? $product->sale_price : $product->price);
 }
 ?>
